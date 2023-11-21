@@ -16,7 +16,7 @@ import { IQuiz } from './types';
 import { IForm } from './types';
 import { IQuizList } from '../../types';
 import { useForm, SubmitHandler } from 'react-hook-form';
-
+// feature
 const Quiz: React.FC<IQuiz> = ({ quiz }) => {
     const [counter, setCounter] = useState(0);
     const [valuesForm, setValuesForm] = useState<IForm>({});
@@ -31,11 +31,6 @@ const Quiz: React.FC<IQuiz> = ({ quiz }) => {
     } = useForm<IForm>();
     const step = 100 / quiz.length;
     const stepCloud = 224 / quiz.length;
-
-    const onSubmit: SubmitHandler<IForm> = (data) => {
-        console.log(data, 'СУБМИТЕ');
-        setCounter(0);
-    };
 
     const next = () => {
         clearErrors();
@@ -53,6 +48,11 @@ const Quiz: React.FC<IQuiz> = ({ quiz }) => {
         setTimeout(() => {
             setCounter((prev) => prev - 1);
         }, 100);
+    };
+
+    const onSubmit: SubmitHandler<IForm> = (data) => {
+        console.log(data, 'СУБМИТЕ');
+        setCounter(0);
     };
 
     const typeChecking = (quizElement: IQuizList, index: number) => {
