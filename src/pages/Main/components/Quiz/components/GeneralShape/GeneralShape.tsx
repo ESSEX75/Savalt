@@ -24,7 +24,6 @@ const GeneralShape: React.FC<IGeneralShape> = ({ inputs, title, control, registe
                         <Controller
                             name={generalShapeInputs.name}
                             control={control}
-                            defaultValue={generalShapeInputs.answers[0].value}
                             render={({ field: { onChange, value } }) => (
                                 <StyledSelect
                                     className="Select__container"
