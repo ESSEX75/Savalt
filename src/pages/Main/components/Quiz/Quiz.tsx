@@ -16,19 +16,23 @@ import { IQuiz } from './types';
 import { IForm } from './types';
 import { IQuizList } from '../../types';
 import { useForm, SubmitHandler } from 'react-hook-form';
-// feature
+import useFormPersist from 'react-hook-form-persist';
+
 const Quiz: React.FC<IQuiz> = ({ quiz }) => {
     const [counter, setCounter] = useState(0);
     const [valuesForm, setValuesForm] = useState<IForm>({});
+    const [result, setResult] = useState('');
     const {
         register,
         handleSubmit,
         control,
-        getValues,
+        setValue,
         trigger,
         clearErrors,
+        watch,
         formState: { errors },
     } = useForm<IForm>();
+    useFormPersist('form2', { watch, setValue });
     const step = 100 / quiz.length;
     const stepCloud = 224 / quiz.length;
 
@@ -39,7 +43,6 @@ const Quiz: React.FC<IQuiz> = ({ quiz }) => {
                 setTimeout(() => {
                     setCounter((prev) => prev + 1);
                 }, 100);
-                setValuesForm(getValues());
             }
         });
     };
@@ -51,10 +54,10 @@ const Quiz: React.FC<IQuiz> = ({ quiz }) => {
     };
 
     const onSubmit: SubmitHandler<IForm> = (data) => {
+        setResult(JSON.stringify(data));
         console.log(data, 'СУБМИТЕ');
         setCounter(0);
     };
-
     const typeChecking = (quizElement: IQuizList, index: number) => {
         switch (quizElement.type) {
             case 'radio':

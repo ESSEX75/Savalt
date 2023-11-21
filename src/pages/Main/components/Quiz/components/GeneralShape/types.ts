@@ -1,5 +1,5 @@
 import { GeneralShapeType } from '../../../../types';
-import { Control, FieldErrors, UseFormRegister } from 'react-hook-form';
+import { Control, FieldErrors, UseFormRegister, UseFormWatch, UseFormSetValue } from 'react-hook-form';
 import { IForm } from '../../types';
 
 export interface IGeneralShape {
