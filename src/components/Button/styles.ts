@@ -1,23 +1,15 @@
 import styled from 'styled-components';
 import { IButtonStyle } from './types';
+import close from '@Images/close.svg';
 
 const stylesButton = {
-    leftArrow: {
+    close: {
         border: 'none',
-        background: 'none',
-        backgroundColor: 'white',
+        background: close,
+        backgroundColor: 'none',
         backgroundSize: '100% 100%',
-        width: '14px',
-        height: '29px',
-        borderRadius: 'none',
-    },
-    rightArrow: {
-        border: 'none',
-        background: 'none',
-        backgroundColor: 'white',
-        backgroundSize: '100% 100%',
-        width: '14px',
-        height: '29px',
+        width: '1.5rem',
+        height: '1.5rem',
         borderRadius: 'none',
     },
     control: {
@@ -25,8 +17,8 @@ const stylesButton = {
         background: 'none',
         backgroundColor: '#E75A45',
         backgroundSize: '100% 100%',
-        width: '140px',
-        height: '40px',
+        width: '8.75rem',
+        height: '2.5rem',
         borderRadius: '46px',
     },
     base: {
@@ -53,4 +45,9 @@ export const ButtonStyle = styled.button<IButtonStyle>`
     cursor: pointer;
     color: white;
     font-weight: 600;
+
+    &:hover {
+        transform: scale(0.95);
+        transition: transform 0.2s;
+    }
 `;

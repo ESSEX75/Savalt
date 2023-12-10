@@ -5,18 +5,11 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
-    "lint": "eslint --ext .js,.ts .",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "lint": "eslint --ext .js,.ts ."
   },
   "author": "Kislitsyn Egor",
   "license": "ISC",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.61",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "react": "^18.2.0",
@@ -29,7 +22,6 @@
   },
   "devDependencies": {
     "@types/eslint": "*",
-    "@types/node": "*",
     "@types/styled-components": "^5.1.29",
     "@types/webpack": "*",
     "@typescript-eslint/eslint-plugin": "*",
@@ -46,7 +38,7 @@
     "eslint-plugin-react-hooks": "*",
     "file-loader": "*",
     "html-webpack-plugin": "*",
-    "prettier": "^2.8.8",
+    "prettier": "*",
     "ts-loader": "*",
     "webpack": "*",
     "webpack-cli": "*",
